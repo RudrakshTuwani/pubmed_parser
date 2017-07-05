@@ -283,7 +283,7 @@ def parse_article_info(medline, year_info_only):
                     else:
                         abstract_list.append('\n')
                         abstract_list.append(section + ' ' + label + ':')
-                abstract_list.append(stringify_children(abstract).strip())
+                    abstract_list.append(stringify_children(abstract).strip())
             abstract = '\n'.join(abstract_list).strip()
         else:
             abstract = stringify_children(article.find('Abstract/AbstractText')).strip() or ''
