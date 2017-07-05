@@ -275,7 +275,7 @@ def parse_article_info(medline, year_info_only):
             abstract_list = list()
             for abstract in article.findall('Abstract/AbstractText'):
                 section = abstract.attrib.get('NlmCategory', '')
-                if section is not 'UNASSIGNED':
+                if section != 'UNASSIGNED':
                     abstract_list.append('\n')
                     abstract_list.append(section)
                 abstract_list.append(stringify_children(abstract).strip())
